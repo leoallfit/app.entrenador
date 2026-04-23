@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@400;700;900&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-zinc-50 text-zinc-900 transition-colors duration-500;
+  }
+}
+
+/* Bold Typography Theme Utilities */
+.theme-bold-typography {
+  --neon: #CCFF00;
+  --ink: #000000;
+  --gray: #1A1A1A;
+  background-color: var(--ink);
+  color: white;
+}
+
+.brutal-border {
+  border: 2px solid white;
+}
+
+.text-neon {
+  color: #CCFF00;
+}
+
+.bg-neon {
+  background-color: #CCFF00;
+}
+
+.grid-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.skew-box {
+  transform: skewX(-5deg);
+}
+
+.marquee-text {
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.brutalist-button {
+  border: 4px solid black;
+  box-shadow: 4px 4px 0px 0px black;
+  @apply bg-white px-6 py-2 font-black uppercase transition-transform active:translate-x-1 active:translate-y-1 active:shadow-none;
+}
+
+.glass {
+  @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-zinc-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-zinc-300 rounded-full hover:bg-zinc-400;
+}
+
